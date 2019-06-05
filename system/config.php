@@ -25,6 +25,6 @@ define('PATH_ARQ', PATH .'img/');
 
 define('DB_TYPE', 'mysql');
 define('DB_HOST', 'localhost'); //local
-define('DB_NAME', 'formasul'); //banco
+define('DB_NAME', 'cb_factory'); //banco
 define('DB_USER', 'root'); //usuario
 define('DB_PASS', ''); //senha 

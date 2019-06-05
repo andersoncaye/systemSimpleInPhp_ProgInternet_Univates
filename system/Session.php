@@ -23,6 +23,10 @@ class Session
 		endif;
 	}
 
+	public static function issetSession($key){
+        return isset($_SESSION[$key]);
+    }
+
 	public static function delete($key)
 	{
 		unset($_SESSION[$key]);
