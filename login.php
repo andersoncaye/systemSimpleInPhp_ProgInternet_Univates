@@ -48,14 +48,13 @@ if (isset($_POST['action']) && $_POST['action'] == 'login'){
         //function_verifca usuario
         $reply = $main->getLogin($email, $password);
 
-        if (!empty($reply)) {
+        if (!empty($reply) && count($reply) == 1) {
             foreach ($reply as $row) {
-                if (count($row) == 1) {
-                    echo 'Aqui  = ' . $row->idUser;
-                    echo 'Aqui  = ' . $row->email;
-                    echo 'Aqui  = ' . $row->password;
-                }
+                $main->session->set("$keySession", $row->email);
             }
+            echo '<script>location.href="index.php";</script>';
+        } else {
+            echo '<script>alert("Login incorreto!");</script>';
         }
     }
 }

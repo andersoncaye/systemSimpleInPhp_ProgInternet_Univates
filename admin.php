@@ -13,9 +13,14 @@
 
         include("");
 
+    } else if(isset($_GET['pagina']) && $_GET['pagina'] == 'sair') { //Para receber pagina ...
+
+        $main->session->destroy();
+        echo '<script>location.href="index.php";</script>';
+
     } else {
 
-        include("page/erro.php");
+        include("pagess/erro.php");
 
     }
 
