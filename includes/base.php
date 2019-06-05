@@ -1,6 +1,6 @@
 <?php
 
-    include ('/system/config.php');
+    include ("/system/config.php");
     require ('/system/Database.php');
     require ('/system/Session.php');
 
