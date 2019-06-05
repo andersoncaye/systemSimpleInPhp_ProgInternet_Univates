@@ -25,8 +25,8 @@ class Main
         $fields = "*";
         $limit = "1";
         $obj = TRUE;
-        $password = md5($password);
-        $where = "email = {$email} AND password = {$password}" ;
+        //$password = md5($password);
+        $where = "email = '{$email}' AND password = '{$password}'" ;
 
         $content = $this->database->select("SELECT {$fields} FROM {$table} WHERE {$where} LIMIT {$limit}", NULL, $obj);
 

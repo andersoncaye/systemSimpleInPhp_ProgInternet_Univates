@@ -46,9 +46,17 @@ if (isset($_POST['action']) && $_POST['action'] == 'login'){
         echo '<script>alert("Preencha todos os campos!");</script>';
     } else {
         //function_verifca usuario
-        $reply = main->getLogin($email, $password);
-        //if ()
-    }
+        $reply = $main->getLogin($email, $password);
 
+        if (!empty($reply)) {
+            foreach ($reply as $row) {
+                if (count($row) == 1) {
+                    echo 'Aqui  = ' . $row->idUser;
+                    echo 'Aqui  = ' . $row->email;
+                    echo 'Aqui  = ' . $row->password;
+                }
+            }
+        }
+    }
 }
 ?>
