@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="pt-br">
-
-    <?php include_once('head.php'); ?>
-
-<body>
+    <head>
+        <?php include_once('head.php'); ?>
+    </head>
+    <body>

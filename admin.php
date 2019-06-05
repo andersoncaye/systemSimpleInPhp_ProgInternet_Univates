@@ -14,7 +14,9 @@
         include("");
 
     } else {
+
         include("page/erro.php");
+
     }
 
     //Inclusao do reodape
