@@ -1,25 +1,46 @@
 *{
     box-sizing: border-box;
     font-family: 'Ubuntu', sans-serif;
+    /*background-color: #04B404;*/
 }
-.titulo-pagina{
 
+body{
+    height: 100%;
 }
+
+.title-page{  }
 
 /* Página de Login */
 #container-login{
     color: ghostwhite;
 }
-
 #form-login{
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translateY(-50%) translateX(-50%)
 }
-
 #container-login .title-page{
     text-align: center;
     padding-top: 5%;
 }
 
+/* Header */
+.navbar{
+    border-radius: 0px 0px 10px 10px;
+    margin-bottom: 20px;
+}
+.social-part .fa{
+    padding-right:20px;
+}
+ul li a{
+    margin-right: 20px;
+}
+
+
+
+/* Footer */
+
+/* Pages */
+
+/* Page Home*/

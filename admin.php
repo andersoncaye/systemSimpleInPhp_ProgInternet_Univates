@@ -5,15 +5,35 @@
     include_once ('includes/header.php');
 
     //Apresentacao da pagina
-    if (!isset($_GET['pagina']) || $_GET['pagina'] == ''){ //Para receber a pagina inicial (home)
+    if (!isset($_GET['page']) || $_GET['page'] == ''){ //Para receber a pagina inicial (home)
 
         include ("pages/home.php");
 
-    } else if(isset($_GET['pagina']) && $_GET['pagina'] == 'meu') { //Para receber pagina ...
+    } else if(isset($_GET['page']) && $_GET['page'] == 'findCheque') { //Para receber pagina ...
 
-        include("");
+        include("pages/chequeFIND.php");
 
-    } else if(isset($_GET['pagina']) && $_GET['pagina'] == 'sair') { //Para receber pagina ...
+    } else if(isset($_GET['page']) && $_GET['page'] == 'client') { //Para receber pagina ...
+
+        include("pages/clientCAD.php");
+
+    } else if(isset($_GET['page']) && $_GET['page'] == 'malote') { //Para receber pagina ...
+
+        include("pages/maloteCAD.php");
+
+    } else if(isset($_GET['page']) && $_GET['page'] == 'report') { //Para receber pagina ...
+
+        include("pages/report.php");
+
+    } else if(isset($_GET['page']) && $_GET['page'] == 'email') { //Para receber pagina ...
+
+        include("pages/email.php");
+
+    } else if(isset($_GET['page']) && $_GET['page'] == 'info') { //Para receber pagina ...
+
+        include("pages/info.php");
+
+    } else if(isset($_GET['page']) && $_GET['page'] == 'sair') { //Para receber pagina ...
 
         $main->session->destroy();
         echo '<script>location.href="index.php";</script>';
@@ -25,6 +45,6 @@
     }
 
     //Inclusao do reodape
-    include_once ('includes/header.php');
+    include_once ('includes/footer.php');
 
 ?>
