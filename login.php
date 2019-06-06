@@ -1,11 +1,11 @@
 <!doctype html>
 <html lang="pt-br">
 <head>
-    <?php include_once('includes/head.php'); ?>
+    <?php require 'app/scripts/head.php'; ?>
     <style type="text/css">
         body{
             width: 100%;
-            background-image: url(img/background-nature.jpg);
+            background-image: url(assets/img/background-nature.jpg);
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-position: center;

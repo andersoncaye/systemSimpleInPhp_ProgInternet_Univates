@@ -1,5 +1,5 @@
 <?php
-    require ('includes/base.php');
+    require ('./app/base.php');
     $keySession = "login";
     $main = new Main();
 

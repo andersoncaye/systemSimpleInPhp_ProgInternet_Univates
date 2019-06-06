@@ -1,8 +1,8 @@
 <?php
 
-    include ("/system/config.php");
-    require ('/system/Database.php');
-    require ('/system/Session.php');
+    include ("./system/config.php");
+    require ('./system/Database.php');
+    require ('./system/Session.php');
 
 class Main
 {

@@ -4,8 +4,23 @@
     /*background-color: #04B404;*/
 }
 
-body{
+
+html, body {
     height: 100%;
+    margin: 0;
+}
+.wrapper {
+    min-height: 100%;
+    margin-bottom: -50px;
+}
+
+.footer,
+.push {
+  height: 50px;
+}
+
+body{
+    background-color: #28a745!important;
 }
 
 .title-page{  }
@@ -25,10 +40,21 @@ body{
     padding-top: 5%;
 }
 
+/* Page title */
+.page-title {
+    background: #eaeaea;
+    padding: 2rem 0;
+    margin-bottom: 2rem;
+}
+
+.page-title h1 {
+    font-family: 'Raleway', sans-serif;
+}
+
+
 /* Header */
 .navbar{
     border-radius: 0px 0px 10px 10px;
-    margin-bottom: 20px;
 }
 .social-part .fa{
     padding-right:20px;
@@ -40,6 +66,16 @@ ul li a{
 
 
 /* Footer */
+
+footer {
+    height: 50px;
+    background-color: #3c4e40;
+    line-height: 1.3;
+    display: flex!important;
+    justify-content: center;
+    align-items: center;
+    font-size: 13px;
+}
 
 /* Pages Erro 404 */
 .erro h4{
