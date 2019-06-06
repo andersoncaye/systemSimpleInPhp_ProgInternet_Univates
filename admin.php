@@ -40,7 +40,7 @@
 
     } else {
 
-        include("pagess/erro.php");
+        include("pages/erro.php");
 
     }
 
