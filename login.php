@@ -39,8 +39,8 @@
 <?php
 
 if (isset($_POST['action']) && $_POST['action'] == 'login'){
-    $email = $_POST['email'];
-    $password = $_POST['password'];
+    $email = $main->clearInjectSQL( $_POST['email'] );
+    $password = $main->clearInjectSQL( $_POST['password'] );
 
     if (empty($email) || empty($password)){
         echo '<script>alert("Preencha todos os campos!");</script>';

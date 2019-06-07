@@ -99,6 +99,10 @@ main > .page-title {
     color: #6ac56c;
 }
 
+.page-title .breadcrumb-item span {
+    color: #6ac56c;
+}
+
 .page-title .breadcrumb-item.active {
     color: #fff!important;
 }

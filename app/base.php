@@ -32,5 +32,9 @@ class Main
 
         return $content;
     }
+    public function clearInjectSQL($stringInput)
+    {
+        return preg_replace('/[^[:alnum:]_]/', '',$stringInput);
+    }
 }
 ?>
