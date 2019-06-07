@@ -1,3 +1,13 @@
+<?php
+    //valida a sessão
+    if (isset($main)){
+        if (!$main->session->issetSession($keySession)) {
+            echo '<script>location.href="../../index.php";</script>';
+        } 
+    } else {
+        echo '<script>location.href="../../index.php";</script>';
+    }
+?>
 <div class="container erro">
     <div class="row">
         <div class="col bg-white">

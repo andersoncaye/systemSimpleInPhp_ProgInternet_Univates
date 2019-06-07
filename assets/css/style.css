@@ -20,7 +20,8 @@ html, body {
 }
 
 body{
-    background-color: #28a745!important;
+    /*background-color: #28a745!important;*/
+    background: url('../img/overlay-page-title.png') white;
 }
 
 .title-page{  }
@@ -40,27 +41,66 @@ body{
     padding-top: 5%;
 }
 
-/* Page title */
-.page-title {
-    background: #eaeaea;
-    padding: 2rem 0;
-    margin-bottom: 2rem;
-}
-
-.page-title h1 {
-    font-family: 'Raleway', sans-serif;
-}
 
 
 /* Header */
-.navbar{
-    border-radius: 0px 0px 10px 10px;
-}
+
 .social-part .fa{
     padding-right:20px;
 }
 ul li a{
     margin-right: 20px;
+}
+
+
+/* Content */
+main {margin-top: 2rem;}
+
+
+/* Page title */
+.page-title {
+    padding: 2rem 0;
+    margin-bottom: 2rem;
+    background-size: cover!important;
+    position: relative;
+}
+.page-title > .container {
+    z-index: 2;
+    position: relative;
+}
+
+.page-title::before {
+    content: "";
+    position: absolute;
+    background:rgba(61, 119, 66, 0.6);
+    width: 100%;
+    height: 100%;
+    top: 0;
+}
+
+main > .page-title {
+    margin-top: -2rem;
+}
+
+.page-title h1 {
+    font-family: 'Raleway', sans-serif;
+    color: #fff;
+}
+
+.page-title nav{
+    display: flex;
+    justify-content: FLEX-END;
+}
+.page-title ol.breadcrumb{
+    background: transparent;
+}
+
+.page-title .breadcrumb-item a {
+    color: #6ac56c;
+}
+
+.page-title .breadcrumb-item.active {
+    color: #fff!important;
 }
 
 
@@ -293,3 +333,4 @@ footer {
 }
 
 /* Page Home*/
+
