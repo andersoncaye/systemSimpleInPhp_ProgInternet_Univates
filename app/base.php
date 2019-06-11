@@ -32,9 +32,14 @@ class Main
 
         return $content;
     }
-    public function clearInjectSQL($stringInput)
+    public function clearInjectAllSQL($stringInput)
     {
         return preg_replace('/[^[:alnum:]_]/', '',$stringInput);
+    }
+
+    public function clearInjectEmailSQL($stringInput)
+    {
+        return preg_replace('/[^a-zA-Z0-9\/:@\.\+-s]/', '',$stringInput);
     }
 }
 ?>

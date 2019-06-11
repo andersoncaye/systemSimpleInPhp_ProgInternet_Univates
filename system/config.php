@@ -16,7 +16,7 @@ define('INDEX_PAGE', 'dashboard');
 define('EXT_VIEW', '.html');
 
 //define('PATH', 'http://'.$_SERVER['HTTP_HOST'].'/SYSCoffe/systemSimpleInPhp_ProgInternet_Univates/'); //endereço raiz
-define('PATH', 'http://'.$_SERVER['HTTP_HOST'].'/SYSCoffe/systemSimpleInPhp_ProgInternet_Univates/'); //endereço raiz
+define('PATH', 'http://'.$_SERVER['HTTP_HOST'].'/systemSimpleInPhp_ProgInternet_Univates/'); //endereço raiz
 define('NODE', 'node_modules/');
 define('URL', PATH . 'sis/');
 define('NODEPATH', PATH . 'tamplete/');

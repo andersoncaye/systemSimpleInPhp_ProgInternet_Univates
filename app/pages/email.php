@@ -18,7 +18,7 @@ if (isset($main)){
             <div class="col-lg-6">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><span>Home</span></li>
+                        <li class="breadcrumb-item"><span>Inicio</span></li>
                         <!--<li class="breadcrumb-item"><span>Home</span></li>-->
                         <li class="breadcrumb-item active" aria-current="page">E-mail</li>
                     </ol>

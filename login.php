@@ -20,11 +20,11 @@
     <form id="form-login" method="POST">
         <div class="form-group">
             <label for="exampleInputEmail1">Endereço de email</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Seu email" name="email">
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Seu email" name="email" required>
         </div>
         <div class="form-group">
             <label for="exampleInputPassword1">Senha</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Senha" name="password">
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Senha" name="password" required>
         </div>
         <div class="form-group">
             <small id="emailHelp" class="form-text text-muted">Você está acessando uma área restita.</small>
@@ -39,8 +39,8 @@
 <?php
 
 if (isset($_POST['action']) && $_POST['action'] == 'login'){
-    $email = $main->clearInjectSQL( $_POST['email'] );
-    $password = $main->clearInjectSQL( $_POST['password'] );
+    $email = $main->clearInjectEmailSQL( $_POST['email'] );
+    $password = $main->clearInjectAllSQL( $_POST['password'] );
 
     if (empty($email) || empty($password)){
         echo '<script>alert("Preencha todos os campos!");</script>';
@@ -48,14 +48,16 @@ if (isset($_POST['action']) && $_POST['action'] == 'login'){
         //function_verifca usuario
         $reply = $main->getLogin($email, $password);
 
+        //echo $email.' - >'.$password;
+
         if (!empty($reply) && count($reply) == 1) {
             foreach ($reply as $row) {
                 $main->session->set("$keySession", $row->email);
             }
             echo '<script>location.href="index.php";</script>';
-        } else {
+        } /*else {
             echo '<script>alert("Login incorreto!");</script>';
-        }
+        }*/
     }
 }
 ?>

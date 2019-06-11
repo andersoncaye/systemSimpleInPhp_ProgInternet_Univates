@@ -41,7 +41,7 @@
                                         </div>
                                         <h4>Oops! Parece que essa página evaporou!</h4>
                                         <p>Temos um problema, mas nosso técnico tá trabalhando nisso...</p>
-                                        <a href="<?php echo PATH; ?>index.php?page" class="btn btn-primary btn-round">Go to homepage</a>
+                                        <a href="<?php echo PATH; ?>index.php?page" class="btn btn-primary btn-round">Página Inicial</a>
                                     </div>
                                 </div>
                             </div>
