@@ -32,12 +32,30 @@ if (isset($main)){
 <div class="container rounded mb-4">
     <div class="row">
         <div class="col bg-white">
-            <h2 class="bg-white" >Título Aqui</h2>
+            <h2 class="bg-white" ></h2>
+            <p class="bg-white"></p>
 
+            <form name="contactform" method="POST">
+                <div class="form-group">
+                    <label for="exampleFormControlInput1">Nome <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="exampleFormControlInput1" name="nome" placeholder="Seu nome" require>
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlInput1">E-mail <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="exampleFormControlInput1" name="assunto" placeholder="Qual o assunto?" require>
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlInput1">Assunto <span class="text-danger">*</span></label>
+                    <input type="email" class="form-control" id="exampleFormControlInput1" name="email" placeholder="nome@exemplo.com" require>
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlTextarea1">Mensagem <span class="text-danger">*</span></label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="10" name="mensagem" placeholder="Sua mensagem..."></textarea>
+                </div>
 
-            <p class="bg-white">Conteúdo Aqui</p>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro aut, ea, voluptatum voluptas veritatis optio voluptatibus laboriosam repudiandae recusandae ipsa sequi totam neque libero eum rerum, incidunt officiis fuga atque.</p>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro aut, ea, voluptatum voluptas veritatis optio voluptatibus laboriosam repudiandae recusandae ipsa sequi totam neque libero eum rerum, incidunt officiis fuga atque.</p>
+                <button type="submit" class="btn btn-primary" name="send" value="email">Salvar Cliente</button>
+
+            </form>
 
             <p></p>
         </div>
