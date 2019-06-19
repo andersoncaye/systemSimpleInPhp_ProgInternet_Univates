@@ -68,6 +68,9 @@ if (isset($main)){
             echo '<script>alert("Preencha todos os campos!");</script>';
         } else {
 
+            $keys = "code,name,email";
+            $values = "'{$code}','{$name}','{$email}'";
+/*
             $array = array(
 
                 'code' => $code,
@@ -77,8 +80,9 @@ if (isset($main)){
             );
 
             print_r($array);
-
-            echo "<br><br><br>############################## ".$main->database->insert("client", $array);
+*/
+            //echo "<br><br><br>############################## ".$main->database->insert('client', $array);
+            echo fun_insert('client', $keys, $values);
 
             if (1 == 1){
                 echo '<script>alert("Salvo com sucesso!");</script>';

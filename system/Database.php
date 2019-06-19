@@ -29,7 +29,6 @@ class Database extends \PDO
 		$sth = $this->prepare("INSERT INTO {$table} ({$fields}) VALUES ({$values})");
 
 		foreach ($data as $key => $value) :
-			echo '<script>alert("'.$value.'");</script>';
 			if (is_int($value)) :
 				$type = \PDO::PARAM_INT;
 			elseif (is_null($value)) :
