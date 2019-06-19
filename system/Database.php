@@ -4,58 +4,51 @@ namespace System;
 
 class Database extends \PDO
 {
-	public $connection;
+
 	public function __construct($dbType, $dbHost, $dbName, $dbUser, $dbPass)
 	{
 		try {
+
 			parent::__construct("{$dbType}:host=$dbHost;dbname=$dbName;charset=utf8", $dbUser, $dbPass);
-			$connection = mysqli_connect($dbHost, $dbUser, $dbPass, $dbName);
+
         } catch (\PDOException $e) {
+
 			die("Ops! Desculpe, ocorreu uma falha de carregamento. Tente novamente mais tarde.");
+
         }
 	}
 
-	public function insert($table, $fields, $values)
+	public function insert($table, $data, $lastInsertIdName = NULL)
 	{
 
+		ksort($data);
 
-		$query = "INSERT INTO {$table} ({$fields}) values ({$values})";
+		$fields = implode(', ', array_keys($data));
+		$values = ':' . implode(', :', array_keys($data));
 
-		mysqli_query($connection, $query);
+		$sth = $this->prepare("INSERT INTO {$table} ({$fields}) VALUES ({$values})");
 
-		if(mysqli_affected_rows($connection) != 0){
-			return TRUE;
-		} else {
-			return FALSE;
-		}
+		foreach ($data as $key => $value) :
+			echo '<script>alert("'.$value.'");</script>';
+			if (is_int($value)) :
+				$type = \PDO::PARAM_INT;
+			elseif (is_null($value)) :
+				$type = \PDO::PARAM_NULL;
+			elseif (is_bool($value)) :
+				$type = \PDO::PARAM_BOOL;
+			else :
+				$type = \PDO::PARAM_STR;
+			endif;
+			$sth->bindValue(":$key", $value, $type);
+		endforeach;
+
+		$sth->execute();
 		
-		// ksort($data);
-
-		// $fields = implode(', ', array_keys($data));
-		// $values = ':' . implode(', :', array_keys($data));
-
-		// $sth = $this->prepare("INSERT INTO {$table} ({$fields}) VALUES ({$values})");
-
-		// foreach ($data as $key => $value) :
-		// 	if (is_int($value)) :
-		// 		$type = \PDO::PARAM_INT;
-		// 	elseif (is_null($value)) :
-		// 		$type = \PDO::PARAM_NULL;
-		// 	elseif (is_bool($value)) :
-		// 		$type = \PDO::PARAM_BOOL;
-		// 	else :
-		// 		$type = \PDO::PARAM_STR;
-		// 	endif;
-		// 	$sth->bindValue(":$key", $value, $type);
-		// endforeach;
+		if (NULL !== $lastInsertIdName) :
+			return $this->lastInsertId($lastInsertIdName);
+		endif;
 		
-		// $sth->execute();
-		
-		// if (NULL !== $lastInsertIdName) :
-		// 	return $this->lastInsertId($lastInsertIdName);
-		// endif;
-		
-		// return TRUE;
+		return TRUE;
 	}
 
 	public function select($qry, $bindValueReplace = array(), $all = TRUE, $fetchMode = \PDO::FETCH_OBJ)

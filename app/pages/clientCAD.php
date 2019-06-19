@@ -67,16 +67,23 @@ if (isset($main)){
         if (empty($code) || empty($name) || empty($email)){
             echo '<script>alert("Preencha todos os campos!");</script>';
         } else {
-            $arrayData = [
 
-                "code" => $code,
-                "name" => $name,
-                "email" => $email
+            $array = array(
 
-            ];
+                'code' => $code,
+                'name' => $name,
+                'email' => $email
 
-            if ($main->datbase->insert("client", $arrayData)){
+            );
+
+            print_r($array);
+
+            echo "<br><br><br>############################## ".$main->database->insert("client", $array);
+
+            if (1 == 1){
                 echo '<script>alert("Salvo com sucesso!");</script>';
+            } else {
+                echo '<script>alert("Erro ao salvar!");</script>';
             }
         }
 
