@@ -17,7 +17,7 @@
                 </a>
                 <div class="dropdown-menu sm-menu">
                     <a class="dropdown-item" href="<?php echo PATH; ?>index.php?page=client">Cliente</a>
-                    <a class="dropdown-item" href="<?php echo PATH; ?>index.php?page=malote">Malote de Cheque</a>
+                    <a class="dropdown-item" href="<?php echo PATH; ?>index.php?page=malote">Malote</a>
                 </div>
             </li>
             <li class="nav-item bg-light">

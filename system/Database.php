@@ -43,7 +43,7 @@ class Database extends \PDO
 
 	    $retry = $sth->execute();
 
-		if (NULL !== $lastInsertIdName) :
+		if (NULL == $lastInsertIdName && $retry) :
 			return $this->lastInsertId($lastInsertIdName);
 		endif;
 		

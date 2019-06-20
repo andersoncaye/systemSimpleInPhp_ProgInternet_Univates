@@ -42,7 +42,7 @@ if (isset($main)){
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><span>Inicio</span></li>
                         <!--<li class="breadcrumb-item"><span>Home</span></li>-->
-                        <li class="breadcrumb-item active" aria-current="page">Clientes</li>
+                        <li class="breadcrumb-item"><span>Clientes</span></li>
                         <li class="breadcrumb-item active" aria-current="page">Cadastro de Cliente</li>
                     </ol>
                 </nav>
@@ -72,10 +72,12 @@ if (isset($main)){
                     <input type="email" class="form-control" id="emailClient" name="email" aria-describedby="emailHelp" placeholder="Email do cliente" value="<?php echo $email;?>" required>
                 </div>
                 <small id="emailHelp" class="form-text text-muted"><span class="text-danger">* Campos obrigatórios</span></small><br/>
-                <button type="submit" class="btn btn-primary" name="save" value="client">Salvar Cliente</button>
+                <button type="submit" class="btn btn-success" name="save" value="client">Salvar Cliente</button>
+                <a href="<?php echo PATH; ?>index.php?page=client" class="btn btn-secondary ml-2"> Cancelar </a>
+
             </form>
 
-            <p></p>
+           <p></p>
         </div>
     </div>
 </div>

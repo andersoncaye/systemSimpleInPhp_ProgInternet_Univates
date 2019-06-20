@@ -17,7 +17,12 @@
     <link href="assets/css/fontawesome-free-5.9.0-web/css/fontawesome.css" rel="stylesheet">
     <link href="assets/css/fontawesome-free-5.9.0-web/css/brands.css" rel="stylesheet">
     <link href="assets/css/fontawesome-free-5.9.0-web/css/solid.css" rel="stylesheet">
-    
+
+    <!-- Lacaweb -->
+<!--    <link href="assets/css/edge/stylesheets/locastyle.css" rel="stylesheet">-->
+<!--    Documentação: http://opensource.locaweb.com.br/ -->
+<!--    http://opensource.locaweb.com.br/locawebstyle-v2/manual/introducao/como-usar/-->
+
     <!-- CSS -->
     <link href="assets/css/style.css" rel="stylesheet" type="text/css"/>
 

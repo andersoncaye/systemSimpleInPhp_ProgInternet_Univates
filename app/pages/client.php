@@ -79,7 +79,7 @@ if (isset($main)){
                 <table class="table" style="margin-top: 60px;">
 
                     <thead>
-                    <tr>
+                    <trdata-url="<?php echo $_SERVER["REQUEST_URI"]; ?>">
                         <th scope="col">#</th>
                         <th scope="col">Código</th>
                         <th scope="col">Cliente</th>
@@ -87,17 +87,17 @@ if (isset($main)){
                         <th scope="col">Ações</th>
                     </tr>
                     </thead>
-                    <?php if ($reply > 0) { ?>
+                    <?php if (!empty($reply)) { ?>
                         <tbody>
                         <?php foreach ($reply as $row){ ?>
-                        <tr data-url="" style="cursor: pointer; ">
+                        <tr data-url="<?php echo $_SERVER["REQUEST_URI"]; ?>&pros=CADclient&edit=<?php echo $row->idClient; ?>" style="cursor: pointer; ">
                             <th scope="row"><?php echo $row->idClient; ?></th>
                             <td><?php echo $row->code; ?> </td>
                             <td><?php echo $row->name; ?> </td>
                             <td><?php echo $row->email; ?> </td>
                             <td>
-                                <a href="<?php echo $_SERVER["REQUEST_URI"]; ?>&pros=CADclient&edit=<?php echo $row->idClient; ?>" style="font-size: 1.2em; color: Tomato;" title="Editar"><i class="fas fa-edit"></i></i></a>
-                                &nbsp;&nbsp;
+                                <!--<a href="<?php echo $_SERVER["REQUEST_URI"]; ?>&pros=CADclient&edit=<?php echo $row->idClient; ?>" style="font-size: 1.2em; color: Tomato;" title="Editar"><i class="fas fa-edit"></i></i></a>
+                                &nbsp;&nbsp;-->
                                 <a href="<?php echo $_SERVER["REQUEST_URI"]; ?>&delete=<?php echo $row->idClient; ?>" style="font-size: 1.2em; color: Tomato;" title="Excluir"><i class="fas fa-trash-alt"></i></a>
                             </td>
                         </tr>

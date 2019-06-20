@@ -16,9 +16,13 @@
 
         include("pages/client.php");
 
-    }   else if(isset($_GET['page']) && $_GET['page'] == 'malote') { //Para receber pagina ...
+    } else if(isset($_GET['pros']) && $_GET['pros'] == 'CADmalote') { //Para receber pagina ...
 
         include("pages/maloteCAD.php");
+
+    } else if(isset($_GET['page']) && $_GET['page'] == 'malote') { //Para receber pagina ...
+
+        include("pages/malote.php");
 
     } else if(isset($_GET['page']) && $_GET['page'] == 'report') { //Para receber pagina ...
 
