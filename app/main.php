@@ -8,11 +8,15 @@
 
         include("pages/chequeFIND.php");
 
-    } else if(isset($_GET['page']) && $_GET['page'] == 'client') { //Para receber pagina ...
+    } else if(isset($_GET['pros']) && $_GET['pros'] == 'CADclient') { //Para receber pagina ...
 
         include("pages/clientCAD.php");
 
-    } else if(isset($_GET['page']) && $_GET['page'] == 'malote') { //Para receber pagina ...
+    } else if(isset($_GET['page']) && $_GET['page'] == 'client') { //Para receber pagina ...
+
+        include("pages/client.php");
+
+    }   else if(isset($_GET['page']) && $_GET['page'] == 'malote') { //Para receber pagina ...
 
         include("pages/maloteCAD.php");
 

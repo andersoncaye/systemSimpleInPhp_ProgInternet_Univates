@@ -41,13 +41,13 @@ class Database extends \PDO
 			$sth->bindValue(":$key", $value, $type);
 		endforeach;
 
-		$sth->execute();
-		
+	    $retry = $sth->execute();
+
 		if (NULL !== $lastInsertIdName) :
 			return $this->lastInsertId($lastInsertIdName);
 		endif;
 		
-		return TRUE;
+		return $retry;
 	}
 
 	public function select($qry, $bindValueReplace = array(), $all = TRUE, $fetchMode = \PDO::FETCH_OBJ)
@@ -102,16 +102,19 @@ class Database extends \PDO
 			$sth->bindValue(":$key", $value, $type);
 		endforeach;
 
-		$sth->execute();
+		$reply = $sth->execute();
 
-		return TRUE;
+		return $reply;
 	}
 
 	public function delete($table, $where)
 	{
-		$sth = $this->prepare("DELETE FROM $table WHERE $where");
-		$sth->execute();
+        $query = "DELETE FROM {$table} WHERE {$where}";
 
-		return TRUE;
+		$sth = $this->prepare($query);
+
+		$retry = $sth->execute();
+
+		return $query;
 	}
 }

@@ -9,6 +9,28 @@ if (isset($main)){
 }
 ?>
 
+<?php
+
+    $code = "";
+    $name = "";
+    $email = "";
+
+    if (isset($_GET['edit']) && !empty($_GET['edit'])){
+        $idClientEdit = (int) $_GET['edit'];
+        $query = "SELECT * FROM client WHERE idClient = ".$idClientEdit;
+//        echo '<script>alert("'.$query.'");</script>';
+        $reply = $main->database->select($query);
+
+        foreach ($reply as $row){
+            $code = $row->code;
+            $name = $row->name;
+            $email = $row->email;
+        }
+
+    }
+
+?>
+
 <section class="page-title" style="background: url(assets/img/bg-page-title-email.jpg);">
     <div class="container">
         <div class="row">
@@ -20,6 +42,7 @@ if (isset($main)){
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><span>Inicio</span></li>
                         <!--<li class="breadcrumb-item"><span>Home</span></li>-->
+                        <li class="breadcrumb-item active" aria-current="page">Clientes</li>
                         <li class="breadcrumb-item active" aria-current="page">Cadastro de Cliente</li>
                     </ol>
                 </nav>
@@ -38,15 +61,15 @@ if (isset($main)){
             <form method="POST">
                 <div class="form-group">
                     <label for="codeClient">Código do cliente <span class="text-danger">*</span></label>
-                    <input type="text" class="form-control" id="codeClient" name="code" placeholder="Codigo do cliente" required>
+                    <input type="text" class="form-control" id="codeClient" name="code" placeholder="Codigo do cliente" value="<?php echo $code;?>" required>
                 </div>
                 <div class="form-group">
                     <label for="nameClient">Nome do cliente <span class="text-danger">*</span></label>
-                    <input type="text" class="form-control" id="nameClient" name="name" placeholder="Nome do cliente" required>
+                    <input type="text" class="form-control" id="nameClient" name="name" placeholder="Nome do cliente" value="<?php echo $name;?>" required>
                 </div>
                 <div class="form-group">
                     <label for="emailClient">Endereço de email <span class="text-danger">*</span></label>
-                    <input type="email" class="form-control" id="emailClient" name="email" aria-describedby="emailHelp" placeholder="Email do cliente" required>          
+                    <input type="email" class="form-control" id="emailClient" name="email" aria-describedby="emailHelp" placeholder="Email do cliente" value="<?php echo $email;?>" required>
                 </div>
                 <small id="emailHelp" class="form-text text-muted"><span class="text-danger">* Campos obrigatórios</span></small><br/>
                 <button type="submit" class="btn btn-primary" name="save" value="client">Salvar Cliente</button>
@@ -68,24 +91,24 @@ if (isset($main)){
             echo '<script>alert("Preencha todos os campos!");</script>';
         } else {
 
-            $keys = "code,name,email";
-            $values = "'{$code}','{$name}','{$email}'";
-/*
             $array = array(
-
                 'code' => $code,
                 'name' => $name,
                 'email' => $email
-
             );
 
-            print_r($array);
-*/
-            //echo "<br><br><br>############################## ".$main->database->insert('client', $array);
-            echo fun_insert('client', $keys, $values);
+            if (isset($_GET['edit']) && !empty($_GET['edit'])){
+                $reply = $main->database->update("client", $array, "idClient = ".$idClientEdit);
+            } else {
+                $reply = $main->database->insert('client', $array, 0);
+            }
 
-            if (1 == 1){
+//            print_r($array);
+
+            if ($reply){
                 echo '<script>alert("Salvo com sucesso!");</script>';
+                echo '<script>location.href="'.PATH.'/index.php?page=client";</script>';
+
             } else {
                 echo '<script>alert("Erro ao salvar!");</script>';
             }
