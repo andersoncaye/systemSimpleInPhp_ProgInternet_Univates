@@ -25,7 +25,7 @@ define('PATH_EST', PATH .'img/');
 define('PATH_ARQ', PATH .'img/');
 
 define('DB_TYPE', 'mysql');
-define('DB_HOST', 'localhost'); //local
-define('DB_NAME', 'cb_factory'); //banco
-define('DB_USER', 'root'); //usuario
-define('DB_PASS', ''); //senha 
+define('DB_HOST', 'mysql04-farm76.kinghost.net'); //local
+define('DB_NAME', 'syscoffe01'); //banco
+define('DB_USER', 'syscoffe01'); //usuario
+define('DB_PASS', 'alegra123'); //senha
