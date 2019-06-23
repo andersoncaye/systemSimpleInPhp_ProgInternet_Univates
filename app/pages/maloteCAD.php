@@ -17,6 +17,8 @@ $references = "";
 $codeClient = "";
 $nameClient = "";
 
+$idMaloteEdit = "";
+
 if (isset($_GET['edit']) && !empty($_GET['edit'])){
     $idMaloteEdit = (int) $_GET['edit'];
     $query = "SELECT pc.*, c.name, c.code FROM pouch_check pc, client c WHERE idPouch = ".$idMaloteEdit." AND idClient_Pousch = idClient ORDER BY date_e, idPouch";
@@ -117,36 +119,62 @@ if ( isset($_GET['delete']) && !empty($_GET['delete']) ){
 
             <!-- Cabeçalho do Malote-->
 
-            <a style="" href=""> <button type="button" class="btn btn-success"> Salvar </button> </a>
-            <a href="<?php echo PATH; ?>index.php?page=malote" class="btn btn-secondary ml-2"> Cancelar </a>
 
-            <!--            <form method="POST" enctype="multipart/form-data">-->
-            <div class="mt-3" id="cabecalhoMalote" style=" border: black solid 1px ; border-radius: 5px; padding: 10px;">
-                <div class="row" style="">
-                    <div class="col-md-3">
-                        <label for="recipient-name" class="control-label">Código cliente:</label>
-                        <input name="codeClient" type="text" class="form-control" placeholder="Ex.: 0123456" value="<?php echo $codeClient; ?>" required>
+            <h2 class="text-center">MALOTE Nº <?php echo $idMaloteEdit; ?></h2>
+            <form method="POST" enctype="multipart/form-data">
+
+                 <button type="submit" class="btn btn-success" name="save" value="malote" > Salvar </button>
+                <a href="<?php echo PATH; ?>index.php?page=malote" class="btn btn-secondary ml-2"> Cancelar </a>
+                <div class="mt-3" id="cabecalhoMalote" style=" border: black solid 1px ; border-radius: 5px; padding: 10px;">
+                    <div class="row" style="">
+                        <div class="col-md-3">
+                            <label for="recipient-name" class="control-label">Código cliente:</label>
+                            <input name="codeClient" type="text" class="form-control-plaintext font-weight-bold" placeholder="Ex.: 0123456" value="<?php echo $codeClient; ?>" required>
+                        </div>
+                        <div class="col-md-9">
+                            <label for="recipient-name" class="control-label">Nome cliente:</label>
+                            <input name="codeClient" type="text" class="form-control-plaintext font-weight-bold" value="<?php echo $nameClient; ?>" required>
+                        </div>
                     </div>
-                    <div class="col-md-9">
-                        <label for="recipient-name" class="control-label">Nome cliente:</label>
-                        <input name="codeClient" type="text" class="form-control-plaintext" value="<?php echo $nameClient; ?>" required>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <label for="message-text" class="control-label">Data:</label>
+                            <input id="date" name="dateMalote" type="text" class="form-control" placeholder="Ex.: dd/mm/aaaa" data-mask="00/00/0000" maxlength="10" value="<?php echo $date; ?>" required>
+                        </div>
+                        <div class="col-md-9">
+                            <label for="message-text" class="control-label">Referência:</label>
+                            <textarea name="references" class="form-control" required><?php echo $references; ?></textarea>
+                        </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-3">
-                        <label for="message-text" class="control-label">Data:</label>
-                        <input id="date" name="date" type="text" class="form-control" placeholder="Ex.: dd/mm/aaaa" data-mask="00/00/0000" maxlength="10" value="<?php echo $date; ?>" required>
-                    </div>
-                    <div class="col-md-9">
-                        <label for="message-text" class="control-label">Referência:</label>
-                        <textarea name="references" class="form-control" required><?php echo $references; ?></textarea>
-                    </div>
-                </div>
-            </div>
 <!--                <div class="modal-footer">-->
 <!--                    <button type="submit" class="btn btn-success" name="save" value="malote">Cadastrar</button>-->
 <!--                </div>-->
-<!--            </form>-->
+            </form>
+
+            <?php
+
+            if (isset($_POST['save']) && $_POST['save'] == 'malote'){
+
+                $newDate = $_POST['dateMalote'];
+                $newReferences = $_POST['references'];
+
+                $array = array(
+                    'date_e' => $newDate,
+                    'reference' => $newReferences
+                );
+
+                $reply = $main->database->update("pouch_check", $array, " idPouch = ".$idMaloteEdit);
+
+                if(!$reply){
+                    echo '<script>alert("Erro ao adicionar cheque!");</script>';
+                } else {
+                    echo '<script>location.href="'.PATH.'/index.php?page=malote&pros=CADmalote&edit='.$idMaloteEdit.'";</script>';
+                }
+
+            }
+
+            ?>
 
             <!-- Tabela de Cheques-->
 

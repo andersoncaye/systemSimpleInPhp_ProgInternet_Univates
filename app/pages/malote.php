@@ -128,7 +128,7 @@ if ( isset($_GET['delete']) && !empty($_GET['delete']) ){
 
                                         if ($reply != null){
                                             echo '<script>alert("Malote gerado com sucesso!");</script>';
-                                            echo '<script>location.href="'.$_SERVER["REQUEST_URI"].'&pros=CADmalote&malote='.$reply.'";</script>';
+                                            echo '<script>location.href="'.$_SERVER["REQUEST_URI"].'&pros=CADmalote&edit='.$reply.'";</script>';
                                         } else {
                                             echo '<script>alert("Erro ao gerar malote!");</script>';
 
