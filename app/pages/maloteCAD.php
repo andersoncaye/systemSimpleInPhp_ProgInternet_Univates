@@ -71,6 +71,22 @@ if ( isset($_POST['add']) && $_POST['add'] == 'check' ) {
 
 }
 
+if ( isset($_GET['delete']) && !empty($_GET['delete']) ){
+    $idCheckDelete = (int) $_GET['delete'];
+
+    $table = "check_doc";
+    $where = "idCheck = ".$idCheckDelete;
+    $retry = $main->database->delete($table, $where);
+
+    if ($retry){
+        echo '<script>alert("Excluido com sucesso!");</script>';
+    } else {
+        echo '<script>alert("Erro ao excluir!");</script>';
+    }
+
+    echo '<script>location.href="'.PATH.'/index.php?page=malote&pros=CADmalote&edit='.$idMaloteEdit.'";</script>';
+}
+
 ?>
 <section class="page-title" style="background: url(assets/img/bg-page-title-email.jpg);">
     <div class="container">
@@ -313,7 +329,7 @@ if ( isset($_POST['add']) && $_POST['add'] == 'check' ) {
                         </td>
                         <td>
 <!--                            <a href="--><?php //echo $_SERVER["REQUEST_URI"]; ?><!--&pros=CADclient&edit=--><?php //echo 'IDAQUI'; ?><!--" style="font-size: 1.2em; color: Tomato;" title="Editar"><i class="fas fa-edit"></i></i></a>-->
-                            <a href="<?php echo $_SERVER["REQUEST_URI"]; ?>&delete=<?php echo 'IDAQUI'; ?>" class="ml-2" style="font-size: 1.2em; color: Tomato;" title="Excluir"><i class="fas fa-trash-alt"></i></a>
+                            <a href="<?php echo $_SERVER["REQUEST_URI"]; ?>&delete=<?php echo $row->idCheck; ?>" class="ml-2" style="font-size: 1.2em; color: Tomato;" title="Excluir"><i class="fas fa-trash-alt"></i></a>
                         </td>
                     </tr>
                     <?php $i++;} ?>
