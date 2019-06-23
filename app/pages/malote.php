@@ -2,6 +2,7 @@
 //valida a sessão
 if (isset($main)){
     if (!$main->session->issetSession($keySession)) {
+
         echo '<script>location.href="../../index.php";</script>';
     }
 } else {
@@ -121,7 +122,7 @@ if ( isset($_GET['delete']) && !empty($_GET['delete']) ){
                                             $idClient = $row->idClient;
                                         }
 
-                                        $array = array ('idClient_Pousch'=> $idClient,'date'=> $date,'reference'=> $references);
+                                        $array = array ('idClient_Pousch'=> $idClient,'date_e'=> $date,'reference'=> $references);
 
                                         $reply = $main->database->insert("pouch_check", $array);
 
@@ -150,7 +151,7 @@ if ( isset($_GET['delete']) && !empty($_GET['delete']) ){
             <?php
             //Buscar dados dos malotes -- para popular a tabela
 
-            $reply = $main->database->select("SELECT pc.*, c.name, c.code FROM pouch_check pc, client c WHERE idClient_Pousch = idClient ORDER BY date, idPouch");
+            $reply = $main->database->select("SELECT pc.*, c.name, c.code FROM pouch_check pc, client c WHERE idClient_Pousch = idClient ORDER BY date_e, idPouch");
 
             ?>
             <!-- Inicio - Tabela de Malotes -->
@@ -181,7 +182,7 @@ if ( isset($_GET['delete']) && !empty($_GET['delete']) ){
                     <tr data-url="<?php echo $_SERVER["REQUEST_URI"]; ?>&pros=CADmalote&edit=<?php echo $row->idPouch; ?>" style="cursor: pointer; ">
                         <th scope="row"><?php echo $row->idPouch; ?></th>
                         <td><?php echo '[ '.$row->code.' ] - '.$row->name; ?></td>
-                        <td><?php echo $row->date; ?> </td>
+                        <td><?php echo $row->date_e; ?> </td>
                         <td><?php echo $row->reference; ?></td>
                         
                         <td>

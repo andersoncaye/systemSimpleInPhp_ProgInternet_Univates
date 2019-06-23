@@ -19,13 +19,13 @@ $nameClient = "";
 
 if (isset($_GET['edit']) && !empty($_GET['edit'])){
     $idMaloteEdit = (int) $_GET['edit'];
-    $query = "SELECT pc.*, c.name, c.code FROM pouch_check pc, client c WHERE idPouch = ".$idMaloteEdit." AND idClient_Pousch = idClient ORDER BY date, idPouch";
+    $query = "SELECT pc.*, c.name, c.code FROM pouch_check pc, client c WHERE idPouch = ".$idMaloteEdit." AND idClient_Pousch = idClient ORDER BY date_e, idPouch";
 //        echo '<script>alert("'.$query.'");</script>';
     $reply = $main->database->select($query);
 
     foreach ($reply as $row){
         $idMalote = $row->idPouch;
-        $date = $row->date;
+        $date = $row->date_e;
         $references = $row->reference;
         $codeClient = $row->code;
         $nameClient = $row->name;
@@ -59,7 +59,7 @@ if ( isset($_POST['add']) && $_POST['add'] == 'check' ) {
 
     $array = array (
         'idPouch_Check' => $idMaloteEdit,
-        'date' => $dateCheck,
+        'date_e' => $dateCheck,
         'value' => $valueCheck,
         'docCpfOrCnpj' => $doc,
         'nameHolder' => $holder,
