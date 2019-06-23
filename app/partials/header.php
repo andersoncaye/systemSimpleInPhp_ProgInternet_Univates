@@ -26,9 +26,9 @@
             <li class="nav-item bg-light">
                 <a class="nav-link" href="<?php echo PATH; ?>index.php?page=email">Email</a>
             </li>
-            <li class="nav-item bg-light">
-                <a class="nav-link" href="<?php echo PATH; ?>index.php?page=info">Info</a>
-            </li>
+<!--            <li class="nav-item bg-light">-->
+<!--                <a class="nav-link" href="--><?php //echo PATH; ?><!--index.php?page=info">Info</a>-->
+<!--            </li>-->
         </ul>
         <div class="social-part bg-light">
             <span class="bg-light">Olá <?php echo $main->session->get($keySession); ?> !</span>
