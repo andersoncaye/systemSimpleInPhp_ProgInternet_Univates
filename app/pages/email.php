@@ -1,4 +1,9 @@
 <?php
+    $name=$_POST['name'];
+    $email=$_POST['email'];
+    $subject=$_POST['subject'];
+    $message=$_POST['message'];
+
 //valida a sessão
 if (isset($main)){
     if (!$main->session->issetSession($keySession)) {
@@ -38,11 +43,11 @@ if (isset($main)){
             <form name="contactform" method="POST">
                 <div class="form-group">
                     <label for="exampleFormControlInput1">Nome <span class="text-danger">*</span></label>
-                    <input type="text" class="form-control" id="exampleFormControlInput1" name="nome" placeholder="Seu nome" require>
+                    <input type="text" class="form-control" id="exampleFormControlInput1" name="name" placeholder="Seu nome" require>
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlInput1">E-mail <span class="text-danger">*</span></label>
-                    <input type="text" class="form-control" id="exampleFormControlInput1" name="assunto" placeholder="Qual o assunto?" require>
+                    <input type="text" class="form-control" id="exampleFormControlInput1" name="subject" placeholder="Qual o assunto?" require>
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlInput1">Assunto <span class="text-danger">*</span></label>
@@ -50,7 +55,7 @@ if (isset($main)){
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlTextarea1">Mensagem <span class="text-danger">*</span></label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="10" name="mensagem" placeholder="Sua mensagem..."></textarea>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="10" name="message" placeholder="Sua mensagem..."></textarea>
                 </div>
 
                 <button type="submit" class="btn btn-primary" name="send" value="email">Salvar Cliente</button>
@@ -61,3 +66,14 @@ if (isset($main)){
         </div>
     </div>
 </div>
+
+<?php
+    $to = "bruno.bencke@universo.univates.br";
+    $subject = "$subject";
+    $message = "<strong>Nome:</strong> $name<br /><br/><strong>E-mail:</strong> $email<br /><br /><strong>Assunto:</strong> $subject<br/><br/><strong>Mensagem:</strong> $message";
+    $header = "MIME-Version: 1.0\n";
+    $header .= "Content-type: text/html; charset=iso-8859-1\n";
+    $header .= "From: $email\n";
+    mail($to, $subject, $message, $header);
+    echo "Mensagem Enviada com Sucesso!";
+?>
