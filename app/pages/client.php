@@ -79,7 +79,7 @@ if (isset($main)){
                 <table class="table" style="margin-top: 60px;">
 
                     <thead>
-                    <trdata-url="<?php echo $_SERVER["REQUEST_URI"]; ?>">
+                    <tr data-url="<?php echo $_SERVER["REQUEST_URI"]; ?>">
                         <th scope="col">#</th>
                         <th scope="col">Código</th>
                         <th scope="col">Cliente</th>

@@ -27,7 +27,7 @@
             <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Senha" name="password" required>
         </div>
         <div class="form-group">
-            <small id="emailHelp" class="form-text text-muted">Você está acessando uma área restita.</small>
+            <small id="emailHelp" class="form-text text-muted">Você está acessando uma área restrita.</small>
         </div>
         <button type="submit" class="btn btn-primary" name="action" value="login">Fazer Login</button>
     </form>

@@ -13,14 +13,14 @@ if (isset($main)){
     <div class="container">
         <div class="row">
             <div class="col-lg-6">
-                <h1>Teste</h1>
+                <h1>Relatórios</h1>
             </div>
             <div class="col-lg-6">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item"><a href="#">Biblioteca</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Dados</li>
+                        <li class="breadcrumb-item"><span>Inicio</span></li>
+                        <!--<li class="breadcrumb-item"><span>Home</span></li>-->
+                        <li class="breadcrumb-item active" aria-current="page">Relatórios</li>
                     </ol>
                 </nav>
             </div>
@@ -32,14 +32,21 @@ if (isset($main)){
 <div class="container rounded mb-4">
     <div class="row">
         <div class="col bg-white">
-            <h2 class="bg-white" >Título Aqui</h2>
+            <h2 class="bg-white" ></h2>
+            <p class="bg-white"></p>
 
+            <form method="POST" >
+                <button type="submit" class="btn btn-light" name="report" value="allMalote">Relatório de Malotes</button>
+            </form>
 
-            <p class="bg-white">Conteúdo Aqui</p>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro aut, ea, voluptatum voluptas veritatis optio voluptatibus laboriosam repudiandae recusandae ipsa sequi totam neque libero eum rerum, incidunt officiis fuga atque.</p>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro aut, ea, voluptatum voluptas veritatis optio voluptatibus laboriosam repudiandae recusandae ipsa sequi totam neque libero eum rerum, incidunt officiis fuga atque.</p>
+            <?php
 
-            <p></p>
+                if (isset($_POST['report']) && $_POST['report'] == 'allMalote'){
+                    require 'app/pages/gerar_pdf.php';
+                }
+
+            ?>
+
         </div>
     </div>
 </div>

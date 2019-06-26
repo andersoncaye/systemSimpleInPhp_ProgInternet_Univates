@@ -168,7 +168,7 @@ if ( isset($_GET['delete']) && !empty($_GET['delete']) ){
             <table class="table" style="margin-top: 60px;">
 
                <thead>
-                    <tr>
+                    <tr data-url="<?php echo $_SERVER["REQUEST_URI"]; ?>">
                         <th scope="col">#</th>
                         <th scope="col">Cliente</th>
                         <th scope="col">Data</th>

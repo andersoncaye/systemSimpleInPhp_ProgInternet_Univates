@@ -36,10 +36,10 @@
 	
 	if (!empty($reply)){
 		foreach ($reply as $row){	
-			$pdf->Cell(50,7,utf8_decode($row["idPouch"]),1,0,"C");
-			$pdf->Cell(50,7,utf8_decode($row["idClient_Pousch"]),1,0,"C");			
-			$pdf->Cell(50,7,($row["date"]),1,0,"C");	
-			$pdf->Cell(50,7,utf8_decode($row["reference"]),1,0,"C");
+			$pdf->Cell(50,7,utf8_decode($row->idPouch),1,0,"C");
+			$pdf->Cell(50,7,utf8_decode($row->idClient_Pousch),1,0,"C");
+			$pdf->Cell(50,7,($row->date),1,0,"C");
+			$pdf->Cell(50,7,utf8_decode($row->reference),1,0,"C");
 			$pdf->Ln();
 		}
 	}
