@@ -35,18 +35,11 @@ if (isset($main)){
             <h2 class="bg-white" ></h2>
             <p class="bg-white"></p>
 
-            <form method="POST" >
-                <button type="submit" class="btn btn-light" name="report" value="allMalote">Relatório de Malotes</button>
-            </form>
+            <a href="report/relatorio-malotes.php" class="btn btn-outline-info btn-lg btn-block" target="_blank">Relatório de Malotes</a>
 
-            <?php
+            <a href="report/relatorio-cheques.php" class="btn btn-outline-info btn-lg btn-block" target="_blank">Relatório de Cheques</a>
 
-                if (isset($_POST['report']) && $_POST['report'] == 'allMalote'){
-                    require 'app/pages/gerar_pdf.php';
-                }
-
-            ?>
-
+            <p class="bg-white"></p>
         </div>
     </div>
 </div>
