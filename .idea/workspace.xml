@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c2212b2a-7e31-4e9f-915c-ca29706071bd" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/app/pages/chequeFIND.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/pages/chequeFIND.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/partials/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/partials/header.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/pages/email.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/pages/email.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/systemSimpleInPhp_ProgInternet_Univates.zip" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -13,30 +14,12 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="email.php" pinned="false" current-in-tab="false">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="email.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/pages/email.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-351">
-              <caret line="14" column="34" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="34" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="chequeFIND.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/pages/chequeFIND.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="142">
-              <caret line="175" column="20" selection-start-line="175" selection-start-column="20" selection-end-line="189" selection-end-column="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="header.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/partials/header.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="30" column="24" lean-forward="true" selection-start-line="30" selection-start-column="24" selection-end-line="30" selection-end-column="24" />
+            <state relative-caret-position="295">
+              <caret line="56" column="90" selection-start-line="56" selection-start-column="90" selection-end-line="56" selection-end-column="90" />
             </state>
           </provider>
         </entry>
@@ -88,7 +71,6 @@
         <option value="$PROJECT_DIR$/login.php" />
         <option value="$PROJECT_DIR$/app/pages/report.php" />
         <option value="$PROJECT_DIR$/app/pages/info.php" />
-        <option value="$PROJECT_DIR$/app/pages/email.php" />
         <option value="$PROJECT_DIR$/system/config.php" />
         <option value="$PROJECT_DIR$/system/db.php" />
         <option value="$PROJECT_DIR$/app/base.php" />
@@ -104,6 +86,7 @@
         <option value="$PROJECT_DIR$/app/pages/maloteCAD.php" />
         <option value="$PROJECT_DIR$/app/pages/chequeFIND.php" />
         <option value="$PROJECT_DIR$/app/partials/header.php" />
+        <option value="$PROJECT_DIR$/app/pages/email.php" />
       </list>
     </option>
   </component>
@@ -118,7 +101,7 @@
       <path value="$PROJECT_DIR$/assets/js/jQuery-Mask-Plugin-master/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="10" />
     <option name="y" value="20" />
     <option name="width" value="1346" />
@@ -243,12 +226,13 @@
       <workItem from="1561045043387" duration="19258000" />
       <workItem from="1561252083867" duration="5187000" />
       <workItem from="1561327443633" duration="690000" />
-      <workItem from="1561328515271" duration="1912000" />
+      <workItem from="1561328515271" duration="2243000" />
+      <workItem from="1561556761040" duration="1828000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="64464000" />
+    <option name="totallyTimeSpent" value="66623000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -495,37 +479,44 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="326">
           <caret line="163" column="49" selection-start-line="163" selection-start-column="49" selection-end-line="163" selection-end-column="49" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/pages/clientCAD.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="519">
-          <caret line="111" column="16" lean-forward="true" selection-start-line="111" selection-start-column="16" selection-end-line="111" selection-end-column="88" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/pages/email.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-351">
-          <caret line="14" column="34" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/pages/chequeFIND.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="175" column="20" selection-start-line="175" selection-start-column="20" selection-end-line="189" selection-end-column="22" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/partials/header.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
-          <caret line="30" column="24" lean-forward="true" selection-start-line="30" selection-start-column="24" selection-end-line="30" selection-end-column="24" />
+          <caret line="30" column="24" selection-start-line="30" selection-start-column="24" selection-end-line="30" selection-end-column="24" />
+          <folding>
+            <element signature="e#1985#1991#0#HTML" expanded="true" />
+            <element signature="e#1991#1997#0#HTML" expanded="true" />
+            <element signature="e#1997#2003#0#HTML" expanded="true" />
+            <element signature="e#2003#2009#0#HTML" expanded="true" />
+            <element signature="e#2009#2015#0#HTML" expanded="true" />
+            <element signature="e#2015#2021#0#HTML" expanded="true" />
+            <element signature="e#2021#2027#0#HTML" expanded="true" />
+            <element signature="e#2027#2033#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/pages/clientCAD.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="417">
+          <caret line="114" column="16" selection-start-line="114" selection-start-column="16" selection-end-line="114" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/pages/chequeFIND.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2822">
+          <caret line="175" column="20" selection-start-line="175" selection-start-column="20" selection-end-line="189" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/pages/email.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="295">
+          <caret line="56" column="90" selection-start-line="56" selection-start-column="90" selection-end-line="56" selection-end-column="90" />
         </state>
       </provider>
     </entry>

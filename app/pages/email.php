@@ -1,8 +1,4 @@
 <?php
-    $name=$_POST['name'];
-    $email=$_POST['email'];
-    $subject=$_POST['subject'];
-    $message=$_POST['message'];
 
 //valida a sessão
 if (isset($main)){
@@ -46,11 +42,11 @@ if (isset($main)){
                     <input type="text" class="form-control" id="exampleFormControlInput1" name="name" placeholder="Seu nome" require>
                 </div>
                 <div class="form-group">
-                    <label for="exampleFormControlInput1">E-mail <span class="text-danger">*</span></label>
+                    <label for="exampleFormControlInput1">Assunto <span class="text-danger">*</span></label>
                     <input type="text" class="form-control" id="exampleFormControlInput1" name="subject" placeholder="Qual o assunto?" require>
                 </div>
                 <div class="form-group">
-                    <label for="exampleFormControlInput1">Assunto <span class="text-danger">*</span></label>
+                    <label for="exampleFormControlInput1">E-mail <span class="text-danger">*</span></label>
                     <input type="email" class="form-control" id="exampleFormControlInput1" name="email" placeholder="nome@exemplo.com" require>
                 </div>
                 <div class="form-group">
@@ -58,7 +54,7 @@ if (isset($main)){
                     <textarea class="form-control" id="exampleFormControlTextarea1" rows="10" name="message" placeholder="Sua mensagem..."></textarea>
                 </div>
 
-                <button type="submit" class="btn btn-primary" name="send" value="email">Salvar Cliente</button>
+                <button type="submit" class="btn btn-primary" name="send" value="email">Enviar</button>
 
             </form>
 
@@ -68,12 +64,27 @@ if (isset($main)){
 </div>
 
 <?php
-    $to = "bruno.bencke@universo.univates.br";
-    $subject = "$subject";
-    $message = "<strong>Nome:</strong> $name<br /><br/><strong>E-mail:</strong> $email<br /><br /><strong>Assunto:</strong> $subject<br/><br/><strong>Mensagem:</strong> $message";
-    $header = "MIME-Version: 1.0\n";
-    $header .= "Content-type: text/html; charset=iso-8859-1\n";
-    $header .= "From: $email\n";
-    mail($to, $subject, $message, $header);
-    echo "Mensagem Enviada com Sucesso!";
+    if (isset($_POST['send']) && $_POST['send'] == 'email' ) {
+        $name = $_POST['name'];
+        $email = $_POST['email'];
+        $subject = $_POST['subject'];
+        $message = $_POST['message'];
+
+        //$to = "bruno.bencke@universo.univates.br";
+        $to = "anderson.caye@universo.univates.br, bruno.bencke@universo.univates.br";
+        $subject = "$subject";
+        $message = "<strong>Nome:</strong> $name<br /><br/><strong>E-mail:</strong> $email<br /><br /><strong>Assunto:</strong> $subject<br/><br/><strong>Mensagem:</strong> $message";
+        $header = "MIME-Version: 1.1\n";
+        $header .= "Content-type: text/html; charset=iso-8859-1\n";
+        //$header .= "From: $email\n";
+        $header .= "From: syscoffe@syscoffe.com.br\n";
+        $header .= "Return-Path:: $email\n";
+        $reply = mail($to, $subject, $message, $header);
+        if ($reply){
+            echo '<script>alert("Mensagem Enviada com Sucesso!");</script>';
+        } else {
+            echo '<script>alert("ERRO ao enviar a mensagem");</script>';
+        }
+
+    }
 ?>
