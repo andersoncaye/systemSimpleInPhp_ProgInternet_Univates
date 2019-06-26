@@ -2,10 +2,10 @@
 
 	include './fpdf/fpdf.php';
 	
-	$servidor = "localhost";
-	$usuario = "root";
-	$senha = "";
-	$dbname = "funildevendas";
+	$servidor = DB_HOST;
+	$usuario = DB_USER;
+	$senha = DB_PASS;
+	$dbname = DB_NAME;
 	
 	//Criar a conexão
 	$conn = mysqli_connect($servidor, $usuario, $senha, $dbname);
@@ -15,12 +15,14 @@
 		//echo "Conexao realizada com sucesso";
 	}
 	
+	///instanciar novo pdf
 	$pdf = new FPDF();
 	$pdf->AddPage();
 	$pdf->SetFont('Arial','B',16);
 	$pdf->Cell(190,10,utf8_decode('Relatório de Cheques'),0,0,"C");
 	$pdf->Ln(15);
 	
+	//montar cabeçalho do pdf
 	$pdf->SetFont("Arial","I",10);
 	$pdf->Cell(50,7,"Id",1,0,"C");
 	$pdf->Cell(40,7,"Data",1,0,"C");
@@ -29,14 +31,19 @@
 	$pdf->Cell(50,7,"Info Bancárias",1,0,"C");
 	$pdf->Ln();
 	
-	foreach($pessoas as $pessoa){
-		$pdf->Cell(50,7,utf8_decode($pessoa["id"]),1,0,"C");
-		$pdf->Cell(50,7,formatoData($pessoa["data"]),1,0,"C");
-		$pdf->Cell(50,7,($pessoa["nrCheque"]),1,0,"C");
-		$pdf->Cell(50,7,utf8_decode($pessoa["titular"]),1,0,"C");
-		$pdf->Cell(50,7,utf8_decode($pessoa["infoBancarias"]),1,0,"C");
-		$pdf->Ln();
+	//select 
+	$reply = $main->database->select("SELECT pc.*, c.name, c.code FROM pouch_check pc, client c WHERE idClient_Pousch = idClient ORDER BY date_e, idPouch");
+	
+	if (!empty($reply)){
+		foreach ($reply as $row){	
+			$pdf->Cell(50,7,utf8_decode($row["idPouch"]),1,0,"C");
+			$pdf->Cell(50,7,utf8_decode($row["idClient_Pousch"]),1,0,"C");			
+			$pdf->Cell(50,7,($row["date"]),1,0,"C");	
+			$pdf->Cell(50,7,utf8_decode($row["reference"]),1,0,"C");
+			$pdf->Ln();
+		}
 	}
+
 	
 	$pdf->Output();
 	
